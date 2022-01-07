@@ -1,0 +1,9 @@
+.sidebar{
+    width: 400px;
+    height: 100%;
+    background-color: rgb(199, 196, 191);
+}
+
+.sidebarTitle{
+    padding: 20px;
+}
