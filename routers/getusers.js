@@ -5,18 +5,6 @@ const college = require('../models/post_schema');
 route.get('/', async (req, res)=>{
     console.log('in get');
 
-    // const data = new college({
-    //     "Item Name":req.body.item_name,
-    //     "Qty":req.body.Qty,
-    //     "Center Name":req.body.center_name,
-    //     "GRN_Date":req.body.grn_date
-    // });
-
-    // data.save().then( data=> {
-    //     res.send(data);     
-    // }).catch(err => {
-    //     res.json({message:err});
-    // });
     try{
     const sub = await college.aggregate([{
         '$group':{
@@ -38,6 +26,33 @@ catch(err){
 }
     // console.log(sub);
     // res.send(sub);
+});
+
+route.get('/suppliers', async (req, res) => {
+try{
+    const suppliers_data = await college.aggregate([
+        {
+            "$group":{
+                "_id":"$Supplier Name",
+                "supp_sum_qty":{"$sum":{"$toDouble":"$Qty"}},
+                "supp_sum_netAmount":{"$sum":{"$toDouble":"$Net Amt"}}
+            }
+        },
+        {
+            "$sort":{
+                "supp_sum_netAmount":-1
+            }
+        },
+        {
+            "$limit":5
+        }
+    ]);
+    res.send(suppliers_data);
+}
+catch (err){
+    console.log(err);
+}
+    
 });
 
 module.exports = route;

@@ -1,11 +1,10 @@
-.Dasboard{
+/* .Dasboard{
     display: flex;
 }
 .Sidebarclass{
-    flex: 4;
+    flex: 2;
 }
 .Graph{
-    width: 100%;
-    height: 50%;
+    flex: 10;
     color: royalblue;
-}
+} */

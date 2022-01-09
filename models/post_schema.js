@@ -4,7 +4,8 @@ const college = new mongoose.Schema({
     "Item Name":{type:String},
     "Qty":{type:String},
     "Center Name":{type:String},
-    "GRN_Date":{type:String}
+    "GRN_Date":{type:String},
+    "Supplier Name":{type:String}
 })
 
-module.exports = mongoose.model('college', college, 'college')
+module.exports = mongoose.model('college', college, 'alldata')

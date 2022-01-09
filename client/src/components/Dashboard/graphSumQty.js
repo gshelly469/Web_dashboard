@@ -19,20 +19,82 @@ class Customers extends Component{
 
     render(){
         return (
-            <div className="Chart">
-                Hi
-                <ResponsiveContainer width={"100%"} aspect={4}>
-                    <LineChart data={this.state.customers}>
-                        <Line type="monotone" dataKey="sum_qty" stroke="#8884d8" strokeWidth={2} />
-                        <Tooltip />
-                        <Legend />
-                        <XAxis dataKey={"_id"} />
-                        <YAxis dataKey={"sum_qty"} />
-                    </LineChart>
-                </ResponsiveContainer>
-                {/* {this.state.customers.map(customer=>
-                    <li key={customer._id}> On {customer._id} date total GRN entries were {customer.sum_qty} </li>
-                )} */}
+            <div className="dash">
+                <div className="Chart">
+                    Hi
+                    <ResponsiveContainer width={"100%"} aspect={4}>
+                        <LineChart data={this.state.customers}>
+                            <Line type="monotone" dataKey="sum_qty" stroke="#8884d8" strokeWidth={2} />
+                            <Tooltip />
+                            <Legend />
+                            <XAxis dataKey={"_id"} />
+                            <YAxis dataKey={"sum_qty"} />
+                        </LineChart>
+                    </ResponsiveContainer>
+                    {/* {this.state.customers.map(customer=>
+                        <li key={customer._id}> On {customer._id} date total GRN entries were {customer.sum_qty} </li>
+                    )} */}
+                </div>
+                <div className="text">
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+                    HI< br />
+
+                </div>
             </div>
         )
     }
