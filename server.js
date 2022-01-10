@@ -11,4 +11,4 @@ app.use(express.json());
 app.use('/getAllUsers', getusers);
 
 
-app.listen(port=5000, ()=> console.log('Backend listening from port 5000'));
+app.listen(process.env.PORT || 5000, ()=> console.log('Backend listening from port 5000'));
