@@ -55,4 +55,30 @@ catch (err){
     
 });
 
+route.get('/sku', async (req,res)=>{
+    try{
+        const sku_sum = await college.aggregate([
+            {
+                $group:{
+                    '_id':"$Item Name",
+                    'supp_sum_netAmount':{'$sum':{'$toDouble':'$Net Amt'}}
+                }
+            },
+            {
+                "$sort":{
+                    "supp_sum_netAmount":-1
+                }
+            },
+            {
+                "$limit":5
+            }
+        ])
+        res.send(sku_sum);
+    }
+    catch(err){
+        res.send({message:err}) 
+        console.log(err);
+    }
+})
+
 module.exports = route;

@@ -1,8 +1,8 @@
 import React from "react";
-import GraphSumQty from "./components/Dashboard/graphSumQty"
+// import GraphSumQty from "./components/Dashboard/graphSumQty"
+// import SupplierGraph from "./components/Dashboard/supplierSumAmt"
 import Topbar from './components/Topbar/topbar'
 import Sidebar from "./components/Sidebar/sidebar"
-import SupplierGraph from "./components/Dashboard/supplierSumAmt"
 import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom"
 
 import "./app.css"

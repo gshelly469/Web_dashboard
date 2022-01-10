@@ -9,6 +9,7 @@ import {Link, BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 import GraphSumQty from "../Dashboard/graphSumQty"
 import SupplierGraph from "../Dashboard/supplierSumAmt"
+import SkuGraph from "../Dashboard/skuSumAmt"
 
 
 export default function sidebar() {
@@ -27,7 +28,7 @@ export default function sidebar() {
                 <Routes>
                     <Route exact path="/" element={<GraphSumQty />} />
                     <Route exact path="/supplier" element={<SupplierGraph />} />
-                    <Route exact path="/sku" element={<GraphSumQty />} />
+                    <Route exact path="/sku" element={<SkuGraph />} />
                 </Routes>
             </div>
         </div>

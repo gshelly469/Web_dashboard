@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import "./supplierSumAmt.css"
+import {ResponsiveContainer, PieChart, Pie, Tooltip, Cell} from "recharts"
 
-import {ResponsiveContainer, PieChart, Pie, Cell, Tooltip} from "recharts"
 
 const data01 = [
     { name: 'Group A', value: 400 },
@@ -27,31 +26,29 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
 
-class suppNetAmount extends Component{
+class Sku extends Component{
+
     constructor(){
         super();
         this.state = {
-            supplier : []
+            Sku_arr:[]
         }
     }
 
     componentDidMount(){
-        fetch("/getAllUsers/suppliers")
-        .then(res => res.json())
-        .then(supplier => this.setState({supplier}, () => console.log(this.state.supplier[0].supp_sum_netAmount)))
+        fetch("/getAllUsers/sku")
+        .then(res =>res.json())
+        .then(sku => this.setState({Sku_arr:sku}, ()=> console.log(this.state.Sku_arr)))
     }
-    // 
+
     render(){
-        // const {list} = this.state.supplier;
-        // var as = JSON.parse(this.state.supplier);
-        // console.log(as);
         return(
-            <div className="suppDash">
-                supp
+        <div>
+            sku
                 <ResponsiveContainer width={"100%"} aspect={3}>
                     <PieChart width={400} height={400} onMouseEnter={this.on}>
                         <Pie 
-                        data={this.state.supplier}
+                        data={this.state.Sku_arr}
                         cx="50%"
                         cy="50%"
                         labelLine={false}
@@ -62,9 +59,9 @@ class suppNetAmount extends Component{
                         activeIndex={0}
                         label
                         >
-                        {this.state.supplier.map((entry, index) => (<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />    ))}
+                        {this.state.Sku_arr.map((entry, index) => (<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />    ))}
                         </Pie>
-                        <Tooltip content={<CustomTooltip />}/>
+                        <Tooltip content={<CustomTooltip />} />
                     </PieChart>
                 </ResponsiveContainer>
                 {/* <div className="body">
@@ -72,23 +69,20 @@ class suppNetAmount extends Component{
                     {this.state.supplier.map()}
                     </ul>
                 </div> */}
-            </div>
-        )
+        </div>)
     }
-}
+};
 
 function CustomTooltip({active, payload, label}){
-    console.log(payload[0]);
     if (active){
         return (
             <div className="tooltip">
-                <h3>Supplier Name </h3>
+                <h3>Item Name</h3>
                 {/* <p>{this.state.supplier}</p> */}
                 <p>{payload[0].payload._id} </p>
-            </div>
-        )
+            </div>)
     }
     return null;
 }
 
-export default suppNetAmount;
+export default Sku;
