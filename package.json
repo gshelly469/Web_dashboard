@@ -7,7 +7,11 @@
     "mongoose": "^6.1.4"
   },
   "scripts": {
-    "start": "node server.js"
+    "build_client":"cd client && npm run build",
+    "install_client":"cd client && npm install",
+    "heroku-postbuild":"npm run install_client && npm run build_client",
+    "start": "node server.js",
+    "client":"cd client && npm start"
   },
   "name": "web-complete",
   "version": "1.0.0",
