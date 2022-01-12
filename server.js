@@ -12,7 +12,7 @@ app.use('/getAllUsers', getusers);
 
 // First store env variable in the Settings-->Config Vars
 if (process.env.env === 'Production'){
-    app.use('/client/build')
+    app.use(express.static('/client/build'));
 }
 
 
