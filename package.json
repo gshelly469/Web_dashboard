@@ -13,6 +13,10 @@
   "name": "web-complete",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=8.0.0"
+  },
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
